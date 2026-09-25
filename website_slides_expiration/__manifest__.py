@@ -23,14 +23,21 @@
 #
 {
     'name': 'eLearning: expiration',
-    'version': '1.0',
-    'summary': """
-        This module makes it impossible to conitinue a slide when the course is expired.     
-    """,
+    'version': '18.0.1.0.0',
+    'summary': """This module makes it impossible to conitinue a slide when the course is expired.""",
     'category': 'eLearning',
-    'description': """
-        This module makes it impossible to conitinue a slide when the course is expired. 
-    """,
+    'description': '''
+expiration
+==========
+
+    This module makes it impossible to conitinue a slide when the course is expired.
+
+    Features:
+
+        - Web integration: Exposes HTTP endpoints for external systems.
+        - UI Integration: Extends 2 view(s) in the Odoo interface.
+        - Extends Odoo: Builds on slide.channel, slide.slide.
+    ''',
     'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-lms/website_slides_expiration',
     'images': ['static/description/banner.png'], # 560x280
