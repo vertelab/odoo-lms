@@ -86,4 +86,10 @@ ENV/
 .spyderproject
 
 # Rope project settings
-.ropeprojectgraphify-out/
+.ropeproject
+
+graphify-out/
+.shazam/
+PLAN*
+*.pyc
+openspec/
