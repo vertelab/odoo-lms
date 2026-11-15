@@ -18,7 +18,7 @@ eLearning Export Import
     ''',
     'depends': ['website_slides'],
     'data': [
-        'security/ir.model.access.csv',
+        'security/ir.access.csv',
         'views/elearning_wizard_views.xml',
     ],
     'installable': True,

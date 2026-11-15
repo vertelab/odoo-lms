@@ -43,7 +43,7 @@ Mail
     'license': 'AGPL-3',
     'depends': ["website_slides_expiration"],
     'data': [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "views/slide_channel_views.xml",
         ],
     'demo': [],
