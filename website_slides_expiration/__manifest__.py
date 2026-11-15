@@ -23,7 +23,7 @@
 #
 {
     'name': 'eLearning: expiration',
-    'version': '18.0.1.0.0',
+    'version': '1.0.0',
     'summary': """This module makes it impossible to conitinue a slide when the course is expired.""",
     'category': 'eLearning',
     'description': '''
