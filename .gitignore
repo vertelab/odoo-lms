@@ -93,3 +93,4 @@ graphify-out/
 PLAN*
 *.pyc
 openspec/
+.ruff_cache/
