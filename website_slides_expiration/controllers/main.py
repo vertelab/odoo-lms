@@ -14,9 +14,7 @@ class WebsiteSlidesDateAccess(WebsiteSlides):
         """
         return request.env['slide.channel']._check_course_date_access(channel.id)
 
-    # 20.0 döper om get_html_content till get_slide_html_content. Den egna
-    # kontrollen är densamma i båda grenarna.
-    @http.route('/slides/slide/get_html_content', type='jsonrpc', auth='public', website=True)
+    @http.route('/slides/slide/get_html_content', type='json', auth='public', website=True)
     def get_slide_html_content(self, slide_id):
         """Override to check date access before returning slide content"""
         fetch_res = self._fetch_slide(slide_id)
@@ -37,7 +35,7 @@ class WebsiteSlidesDateAccess(WebsiteSlides):
         # If accessible, proceed with normal flow
         return super(WebsiteSlidesDateAccess, self).get_slide_html_content(slide_id)
 
-    @http.route(['/slides/slide/set_completed'], type='jsonrpc', auth='public', website=True)
+    @http.route(['/slides/slide/set_completed'], type='json', auth='public', website=True)
     def slide_set_completed(self, slide_id):
         """Override to check date access before marking slide as completed"""
         fetch_res = self._fetch_slide(slide_id)
@@ -58,7 +56,7 @@ class WebsiteSlidesDateAccess(WebsiteSlides):
         # If accessible, proceed with normal flow
         return super(WebsiteSlidesDateAccess, self).slide_set_completed(slide_id)
 
-    @http.route(['/slides/slide/quiz/submit'], type='jsonrpc', auth='public', website=True)
+    @http.route(['/slides/slide/quiz/submit'], type='json', auth='public', website=True)
     def slide_quiz_submit(self, slide_id, answer_ids):
         """Override to check date access before submitting quiz"""
         fetch_res = self._fetch_slide(slide_id)
@@ -79,7 +77,7 @@ class WebsiteSlidesDateAccess(WebsiteSlides):
         # If accessible, proceed with normal flow
         return super(WebsiteSlidesDateAccess, self).slide_quiz_submit(slide_id, answer_ids)
 
-    @http.route('/slides/channel/check_access', type='jsonrpc', auth='public', website=True)
+    @http.route('/slides/channel/check_access', type='json', auth='public', website=True)
     def channel_check_date_access(self, channel_id):
         """
         JSON endpoint to check if a channel is accessible based on dates

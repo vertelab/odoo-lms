@@ -1,5 +1,6 @@
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import AccessError, UserError, ValidationError
+from odoo.osv import expression
 from odoo.tools import is_html_empty
 
 
@@ -33,14 +34,16 @@ class SlideChannel(models.Model):
 
         return result
 
-    # check_access_rights() togs bort i 20.0; check_access() är ersättaren.
-    def check_access(self, operation):
+    def check_access_rights(self, operation, raise_exception=True):
         """Override to add date-based access control"""
-        super(SlideChannel, self).check_access(operation)
+        res = super(SlideChannel, self).check_access_rights(operation, raise_exception)
 
         if operation == 'read' and self:
             access_check = self._check_course_date_access(self.id)
             if not access_check['accessible']:
-                raise AccessError(access_check['message'])
+                if raise_exception:
+                    raise AccessError(access_check['message'])
+                return False
+        return res
 
 

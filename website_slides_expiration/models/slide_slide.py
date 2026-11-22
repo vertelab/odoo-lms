@@ -1,5 +1,6 @@
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import AccessError, UserError, ValidationError
+from odoo.osv import expression
 from odoo.tools import is_html_empty
 
 

@@ -23,7 +23,7 @@
 #
 {
     'name': 'eLearning: expiration',
-    'version': '1.0.0',
+    'version': '18.0.1.0.0',
     'summary': """This module makes it impossible to conitinue a slide when the course is expired.""",
     'category': 'eLearning',
     'description': '''
@@ -50,8 +50,7 @@ expiration
     ],
     'assets': {
         'web.assets_frontend': [
-            # 20.0 ersatte publicWidget med Interaction; den här patchen har
-            # ingen motsvarighet där (kontrollen finns kvar serverside).
+            'website_slides_expiration/static/src/js/slides_course_fullscreen_player.js',
         ]
     },
     'application': False,
