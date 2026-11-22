@@ -1,6 +1,5 @@
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import AccessError, UserError, ValidationError
-# odoo.osv was removed in 20.0; this module does not use expression.
 from odoo.tools import is_html_empty
 
 

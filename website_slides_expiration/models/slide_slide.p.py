@@ -1,8 +1,6 @@
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import AccessError, UserError, ValidationError
-# #if VERSION >= "20.0"
-# odoo.osv was removed in 20.0; this module does not use expression.
-# #else
+# #if VERSION <= "19.0"
 from odoo.osv import expression
 # #endif
 from odoo.tools import is_html_empty

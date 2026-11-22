@@ -2,7 +2,11 @@
     'name': 'eLearning Export Import',
 'author': 'Vertel Sverige AB',
 'website': 'https://vertel.se/apps/odoo-lms/website_slides_export_import',
+    # #if VERSION <= "19.0"
+    'version': '18.0.1.0.0',
+    # #else
     'version': '1.0.0',
+    # #endif
     'category': 'eLearning',
     'summary': 'Export and import eLearning courses easily.',
     'description': '''

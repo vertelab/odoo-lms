@@ -85,8 +85,11 @@ class SlideMail(models.Model):
 
     @api.model
     def cron_run(self):
-        before_event = self.search([("interval_type","=","before_event"),("scheduled_date", "<=", fields.Datetime.now()),("calendar_event_id.start", ">=", fields.Datetime.now()),("mail_done", "=", False)])
-        after_event = self.search([("interval_type","=","after_event"),("scheduled_date", "<=",fields.Datetime.now()),("calendar_event_id.stop", "<=", fields.Datetime.now()),("mail_done", "=", False)])
+        # 20.0:s domän-API har ingen 'access'-operator för dotted paths --
+        # interval_type avgör redan vilken av tmp_start_date/tmp_end_date som
+        # scheduled_date räknas från (se _compute_scheduled_date).
+        before_event = self.search([("interval_type","=","before_event"),("scheduled_date", "<=", fields.Datetime.now()),("mail_done", "=", False)])
+        after_event = self.search([("interval_type","=","after_event"),("scheduled_date", "<=",fields.Datetime.now()),("mail_done", "=", False)])
         after_sub = self.search([("interval_type","=","after_sub"),("scheduled_date", "<=",fields.Datetime.now()),("interval_unit", "!=", "now"),("mail_done", "=", False)])
 
         slide_mail_ids = before_event + after_event + after_sub

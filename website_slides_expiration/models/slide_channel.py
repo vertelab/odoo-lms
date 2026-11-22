@@ -1,6 +1,5 @@
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import AccessError, UserError, ValidationError
-# odoo.osv was removed in 20.0; this module does not use expression.
 from odoo.tools import is_html_empty
 
 
@@ -34,16 +33,14 @@ class SlideChannel(models.Model):
 
         return result
 
-    def check_access_rights(self, operation, raise_exception=True):
+    # check_access_rights() togs bort i 20.0; check_access() är ersättaren.
+    def check_access(self, operation):
         """Override to add date-based access control"""
-        res = super(SlideChannel, self).check_access_rights(operation, raise_exception)
+        super(SlideChannel, self).check_access(operation)
 
         if operation == 'read' and self:
             access_check = self._check_course_date_access(self.id)
             if not access_check['accessible']:
-                if raise_exception:
-                    raise AccessError(access_check['message'])
-                return False
-        return res
+                raise AccessError(access_check['message'])
 
 

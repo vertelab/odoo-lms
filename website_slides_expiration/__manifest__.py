@@ -50,7 +50,8 @@ expiration
     ],
     'assets': {
         'web.assets_frontend': [
-            'website_slides_expiration/static/src/js/slides_course_fullscreen_player.js',
+            # 20.0 ersatte publicWidget med Interaction; den här patchen har
+            # ingen motsvarighet där (kontrollen finns kvar serverside).
         ]
     },
     'application': False,

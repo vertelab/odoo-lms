@@ -23,7 +23,11 @@
 #
 {
     'name': 'eLearning: Mail',
+    # #if VERSION <= "19.0"
+    'version': '18.0.1.0.0',
+    # #else
     'version': '1.0.0',
+    # #endif
     'summary': "Adds email notifications to courses.",
     'category': '', # Technical Settings|Localization|Payroll Localization|Account Charts|User types|Invoicing|Sales|Human Resources|Operations|Marketing|Manufacturing|Website|Theme|Administration|Appraisals|Sign|Helpdesk|Administration|Extra Rights|Other Extra Rights|
     'description': '''
