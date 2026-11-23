@@ -1,0 +1,2 @@
+id,name,model_id,group_id/id,operation,domain
+access_elearning_export_import,elearning.export.import,elearning.export.import,base.group_user,crud,
